@@ -8,7 +8,7 @@ namespace GameServer
     {
         static void Main(string[] args)
         {
-            PartidaFactory partidaFactory = new PartidaFactory();
+            var partidaFactory = new PartidaFactory();
             IPartidaFactory treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
             treino.Hello();
 
