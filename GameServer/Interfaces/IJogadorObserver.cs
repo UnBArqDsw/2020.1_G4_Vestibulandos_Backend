@@ -4,8 +4,8 @@ using System.Text;
 
 namespace GameServer.Interfaces
 {
-    public interface IPartidaFactory: IPartidaSubject
+    public interface IJogadorObserver
     {
-        void Hello();
+        void Update(IPartidaSubject subject);
     }
 }
