@@ -5,8 +5,11 @@ using System.Text;
 
 namespace GameServer.Entities
 {
-    public class Jogador : JogadorObserver
+    public class Jogador : JogadorObserver, IUsuario
     {
-         
+         public void Hello()
+        {
+            Console.WriteLine("Usuário do tipo Jogador");
+        }
     }
 }

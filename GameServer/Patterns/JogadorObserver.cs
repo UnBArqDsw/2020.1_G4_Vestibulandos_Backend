@@ -11,5 +11,6 @@ namespace GameServer.Entities
         {
             Console.WriteLine("Player: Reacted to the event.");
         }
+
     }
 }

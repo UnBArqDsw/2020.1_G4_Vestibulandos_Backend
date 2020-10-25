@@ -1,6 +1,7 @@
 ﻿using GameServer.Entities;
 using GameServer.Factory;
 using GameServer.Interfaces;
+using GameServer.Patterns;
 using System;
 
 namespace GameServer
@@ -9,21 +10,30 @@ namespace GameServer
     {
         static void Main(string[] args)
         {
-            var partidaFactory = new PartidaFactory();
-            var treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
-            treino.Hello();
+            //var partidaFactory = new PartidaFactory();
+            //var treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
+            //treino.Hello();
 
-            var ranqueada = partidaFactory.GetPartida(TipoPartidaCode.Ranqueada);
-            ranqueada.Hello();
+            //var ranqueada = partidaFactory.GetPartida(TipoPartidaCode.Ranqueada);
+            //ranqueada.Hello();
 
-            var player1 = new Jogador();
-            var player2 = new Jogador();
+            var usuarioFactory = new UsuarioFactory();
+            var monitor = usuarioFactory.GetUsuario(TipoUsuarioCode.Monitor);
+            var administrador = usuarioFactory.GetUsuario(TipoUsuarioCode.Administrador);
+            var jogador = usuarioFactory.GetUsuario(TipoUsuarioCode.Jogador);
 
-            treino.Attach(player1);
-            treino.Attach(player2);
+            monitor.Hello();
+            administrador.Hello();
+            jogador.Hello();
 
-            var treinoSubject = (PartidaSubject)treino;
-            treinoSubject.SomeBusinessLogic();
+            //var player1 = new Jogador();
+            //var player2 = new Jogador();
+
+            //treino.Attach(player1);
+            //treino.Attach(player2);
+
+            //var treinoSubject = (PartidaSubject)treino;
+            //treinoSubject.SomeBusinessLogic();
 
             //((PartidaSubject)treino).SomeBusinessLogic();
         }
