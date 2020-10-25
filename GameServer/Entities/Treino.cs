@@ -23,5 +23,6 @@ namespace GameServer.Entities
         {
             Console.WriteLine("Partida treino");
         }
+
     }
 }
