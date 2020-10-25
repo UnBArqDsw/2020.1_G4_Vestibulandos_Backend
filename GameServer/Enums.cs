@@ -9,4 +9,12 @@ namespace GameServer
         Treino,
         Ranqueada
     }
+
+    public enum TipoUsuarioCode
+    {
+        Unknown = 0,
+        Jogador,
+        Monitor,
+        Administrador
+    }
 }
