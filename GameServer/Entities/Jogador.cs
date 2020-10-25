@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GameServer.Entities
 {
-    public class Jogador : Usuario, IJogadorObserver
+    public class Jogador : Usuario
     {
         public string Apelido { get; set; }
         public int Nivel { get; set; } = 0;
@@ -65,9 +65,5 @@ namespace GameServer.Entities
             Console.WriteLine("Usuário do tipo Jogador");
         }
 
-        public void Update(IPartidaSubject subject)
-        {
-            Console.WriteLine("Player: Reacted to the event.");
-        }
     }
 }

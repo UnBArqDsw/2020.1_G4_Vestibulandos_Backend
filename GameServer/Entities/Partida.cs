@@ -5,7 +5,7 @@ using System.Text;
 
 namespace GameServer.Entities
 {
-    public abstract class Partida : PartidaSubject, IPartidaFactory
+    public abstract class Partida : IPartidaFactory
     {
         public int Id { get; set; }
         public TipoPartida TipoPartida { get; set; }

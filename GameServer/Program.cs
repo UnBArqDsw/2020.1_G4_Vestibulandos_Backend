@@ -35,7 +35,7 @@ namespace GameServer
             //var treinoSubject = (PartidaSubject)treino;
             //treinoSubject.SomeBusinessLogic();
 
-            ((PartidaSubject)treino).SomeBusinessLogic();
+            //((PartidaSubject)treino).SomeBusinessLogic();
         }
     }
 }
