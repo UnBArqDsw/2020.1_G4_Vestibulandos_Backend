@@ -12,9 +12,9 @@ namespace GameServer.Patterns
         {
             switch (tipoUsuarioCode)
             {
-                case TipoUsuarioCode.Jogador: return new Jogador();
-                case TipoUsuarioCode.Monitor: return new Monitor();
-                case TipoUsuarioCode.Administrador: return new Administrador();
+                case TipoUsuarioCode.Jogador: return new Jogador("login", "senha", "email", "apelido", 1);
+                case TipoUsuarioCode.Monitor: return new Monitor("login", "senha", "email", 1);
+                case TipoUsuarioCode.Administrador: return new Administrador("login", "senha", "email", 1);
                 default: throw new ArgumentOutOfRangeException();
             }
         }

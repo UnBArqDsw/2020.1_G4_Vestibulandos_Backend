@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GameServer.Interfaces
+namespace GameServer.Entities
 {
-    public interface IUsuario : IUsuarioFactory
+    public class Questao
     {
     }
 }

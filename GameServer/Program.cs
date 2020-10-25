@@ -10,11 +10,11 @@ namespace GameServer
     {
         static void Main(string[] args)
         {
-            //var partidaFactory = new PartidaFactory();
-            //var treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
+            var partidaFactory = new PartidaFactory();
+            var treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
             //treino.Hello();
 
-            //var ranqueada = partidaFactory.GetPartida(TipoPartidaCode.Ranqueada);
+            var ranqueada = partidaFactory.GetPartida(TipoPartidaCode.Ranqueada);
             //ranqueada.Hello();
 
             var usuarioFactory = new UsuarioFactory();
@@ -29,13 +29,13 @@ namespace GameServer
             //var player1 = new Jogador();
             //var player2 = new Jogador();
 
-            //treino.Attach(player1);
-            //treino.Attach(player2);
+            //treino.Attach((IJogadorObserver)jogador);
+            //treino.Attach((IJogadorObserver)jogador);
 
             //var treinoSubject = (PartidaSubject)treino;
             //treinoSubject.SomeBusinessLogic();
 
-            //((PartidaSubject)treino).SomeBusinessLogic();
+            ((PartidaSubject)treino).SomeBusinessLogic();
         }
     }
 }
