@@ -1,10 +1,11 @@
-﻿using System;
+﻿using GameServer.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GameServer.Entities
 {
-    public class Monitor : Usuario
+    public class Monitor : Usuario, IMonitorObserver
     {
         public Monitor(string login, string senha, string email, int tipoUsuario) : base(login, senha, email, tipoUsuario)
         {
@@ -25,5 +26,9 @@ namespace GameServer.Entities
             return true;
         }
 
+        public void Update(IQuestaoSubject subject)
+        {
+            Console.WriteLine("Monitor: Reacted to the event.");
+        }
     }
 }
