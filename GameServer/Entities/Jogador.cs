@@ -7,10 +7,7 @@ using System.Text;
 namespace GameServer.Entities
 {
     public class Jogador : Usuario, IJogador
-    //public class Jogador : Usuario, IJogadorObserver
     {
-        //protected IPartidaMediator _partidaMediator;
-
         public string Apelido { get; set; }
         public int Nivel { get; set; } = 0;
         public int Experiencia { get; set; } = 0;

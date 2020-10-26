@@ -7,5 +7,6 @@ namespace GameServer.Interfaces
     public interface IJogador
     {
         bool Ação(int id);
+        void ReactNotify();
     }
 }
