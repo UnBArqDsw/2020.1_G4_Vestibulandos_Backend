@@ -20,14 +20,27 @@ namespace GameServer
             var usuarioFactory = new UsuarioFactory();
             var monitor = usuarioFactory.GetUsuario(TipoUsuarioCode.Monitor);
             var administrador = usuarioFactory.GetUsuario(TipoUsuarioCode.Administrador);
-            var jogador = usuarioFactory.GetUsuario(TipoUsuarioCode.Jogador);
+            var jogadorUsuario = usuarioFactory.GetUsuario(TipoUsuarioCode.Jogador);
+            var jogadorUsuario2 = usuarioFactory.GetUsuario(TipoUsuarioCode.Jogador);
 
             monitor.Hello();
             administrador.Hello();
-            jogador.Hello();
+            jogadorUsuario.Hello();
 
             //var player1 = new Jogador();
             //var player2 = new Jogador();
+
+            Console.WriteLine();
+
+            var jogador = (Jogador)jogadorUsuario;
+            jogador.Id = 2;
+
+            var jogador2 = (Jogador)jogadorUsuario2;
+
+            ((Partida)treino).RegistrarJogador(jogador);
+            ((Partida)treino).RegistrarJogador(jogador2);
+
+            _ = jogador.Ação(jogador.Id);
 
             //treino.Attach((IJogadorObserver)jogador);
             //treino.Attach((IJogadorObserver)jogador);
@@ -35,7 +48,7 @@ namespace GameServer
             //var treinoSubject = (PartidaSubject)treino;
             //treinoSubject.SomeBusinessLogic();
 
-            ((PartidaSubject)treino).SomeBusinessLogic();
+            //((PartidaSubject)treino).SomeBusinessLogic();
         }
     }
 }

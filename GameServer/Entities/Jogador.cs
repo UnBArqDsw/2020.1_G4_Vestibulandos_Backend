@@ -6,8 +6,11 @@ using System.Text;
 
 namespace GameServer.Entities
 {
-    public class Jogador : Usuario, IJogadorObserver
+    public class Jogador : Usuario, IJogador
+    //public class Jogador : Usuario, IJogadorObserver
     {
+        //protected IPartidaMediator _partidaMediator;
+
         public string Apelido { get; set; }
         public int Nivel { get; set; } = 0;
         public int Experiencia { get; set; } = 0;
@@ -15,6 +18,7 @@ namespace GameServer.Entities
         public int Derrota { get; set; } = 0;
         public int AcertoQuestao { get; set; } = 0;
         public int ErroQuestao { get; set; } = 0;
+        public IPartidaMediator Partida { get; set; }
 
         public Jogador(string login, string senha, string email, string apelido, int tipoUsuario) : base(login, senha, email, tipoUsuario)
         {
@@ -65,9 +69,18 @@ namespace GameServer.Entities
             Console.WriteLine("Usuário do tipo Jogador");
         }
 
-        public void Update(IPartidaSubject subject)
+        public void ReactNotify()
         {
-            Console.WriteLine("Player: Reacted to the event.");
+            Console.WriteLine($"Player {Id}: Reacted to the event.");
         }
+
+        public bool Ação(int id)
+        {
+            Console.WriteLine($"Ação do jogador {id}");
+            Partida.Notify();
+
+            return true;
+        }
+
     }
 }

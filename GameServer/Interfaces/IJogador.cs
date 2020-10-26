@@ -4,8 +4,8 @@ using System.Text;
 
 namespace GameServer.Interfaces
 {
-    public interface IJogadorObserver
+    public interface IJogador
     {
-        void Update(IPartidaSubject subject);
+        bool Ação(int id);
     }
 }

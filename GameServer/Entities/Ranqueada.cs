@@ -29,5 +29,6 @@ namespace GameServer.Entities
         {
             Console.WriteLine("Partida ranqueada");
         }
+
     }
 }
