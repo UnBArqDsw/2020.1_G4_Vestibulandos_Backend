@@ -12,10 +12,6 @@ namespace GameServer
         {
             var partidaFactory = new PartidaFactory();
             var treino = partidaFactory.GetPartida(TipoPartidaCode.Treino);
-            //treino.Hello();
-
-            var ranqueada = partidaFactory.GetPartida(TipoPartidaCode.Ranqueada);
-            //ranqueada.Hello();
 
             var usuarioFactory = new UsuarioFactory();
             var monitor = usuarioFactory.GetUsuario(TipoUsuarioCode.Monitor);
@@ -26,9 +22,6 @@ namespace GameServer
             monitor.Hello();
             administrador.Hello();
             jogadorUsuario.Hello();
-
-            //var player1 = new Jogador();
-            //var player2 = new Jogador();
 
             Console.WriteLine();
 
@@ -42,13 +35,11 @@ namespace GameServer
 
             _ = jogador.Ação(jogador.Id);
 
-            //treino.Attach((IJogadorObserver)jogador);
-            //treino.Attach((IJogadorObserver)jogador);
+            Console.WriteLine("\n");
 
-            //var treinoSubject = (PartidaSubject)treino;
-            //treinoSubject.SomeBusinessLogic();
-
-            //((PartidaSubject)treino).SomeBusinessLogic();
+            var questao = new Questao();
+            questao.Attach((Monitor)monitor);
+            questao.SomeBusinessLogic();
         }
     }
 }
