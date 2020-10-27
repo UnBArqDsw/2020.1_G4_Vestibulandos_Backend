@@ -1,9 +1,0 @@
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\AuthServer.csprojAssemblyReference.cache
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\AuthServer.AssemblyInfoInputs.cache
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\AuthServer.AssemblyInfo.cs
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\AuthServer.RazorTargetAssemblyInfo.cache
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\staticwebassets\AuthServer.StaticWebAssets.Manifest.cache
-C:\Projects\2020.1_G4_Vestibulandos_Backend\AuthServer\obj\Debug\netcoreapp3.1\staticwebassets\AuthServer.StaticWebAssets.xml
