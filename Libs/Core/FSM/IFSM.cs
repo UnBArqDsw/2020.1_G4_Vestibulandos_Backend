@@ -1,4 +1,4 @@
-﻿namespace GameServer.FSM
+﻿namespace Core.FSM
 {
     public interface IFSM
     {
@@ -6,7 +6,7 @@
         /// Current State.
         /// </summary>
         FSMState m_currentState { get; set; }
-
+        
         /// <summary>
         /// FSM.
         /// </summary>

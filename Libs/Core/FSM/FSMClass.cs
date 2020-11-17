@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace GameServer.FSM
+namespace Core.FSM
 {
     public class FSMClass
     {
@@ -122,7 +120,7 @@ namespace GameServer.FSM
 
             // Otherwise put the FSMstate object pointer into the map
             m_dictState.Add(newState.GetID(), newState);
-
+            
             // Add with successfully.
             return true;
         }
