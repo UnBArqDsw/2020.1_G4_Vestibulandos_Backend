@@ -10,6 +10,7 @@ using System;
 using Core.Event;
 using System.Collections.Generic;
 using System.Text;
+using LoginServer.Network.Event;
 
 namespace LoginServer.Session
 {

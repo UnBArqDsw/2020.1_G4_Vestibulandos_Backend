@@ -28,11 +28,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\Logging\Logging.csproj" />
     <ProjectReference Include="..\Security\Security.csproj" />
     <ProjectReference Include="..\Serialization\Serialization.csproj" />
-    <ProjectReference Include="..\ServerFramework\ServerFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ServerFramework">
+      <HintPath>..\ServerFramework\ServerFramework.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

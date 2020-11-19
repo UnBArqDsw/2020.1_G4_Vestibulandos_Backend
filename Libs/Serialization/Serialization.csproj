@@ -16,5 +16,13 @@
     <Compile Include="$(SolutionDir)..\client\Assets\Scripts\Network\Serialization\*.cs" LinkBase="Shared" />
     <Compile Include="$(SolutionDir)..\client\Assets\Scripts\Network\Serialization\Data\*.cs" LinkBase="Shared" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Remove="C:\BomberProject\server\..\client\Assets\Scripts\Network\Serialization\PacketRU.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
 
 </Project>

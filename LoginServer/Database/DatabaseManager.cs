@@ -12,6 +12,7 @@ using ServerFramework.Database;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using LoginServer.Data;
+using Core.Event;
 
 namespace LoginServer.Database
 {

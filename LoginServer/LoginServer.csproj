@@ -6,8 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Libs\Core\Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="ServerFramework">
-      <HintPath>..\Libs\DLLs\ServerFramework.dll</HintPath>
+      <HintPath>..\Libs\ServerFramework\ServerFramework.dll</HintPath>
     </Reference>
   </ItemGroup>
 
