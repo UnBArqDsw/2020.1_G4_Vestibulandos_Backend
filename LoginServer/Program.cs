@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginServer.Application;
+using System;
 using System.Globalization;
 using System.Threading;
 
@@ -51,12 +52,38 @@ namespace LoginServer
             Console.WriteLine(string.Empty);
             Console.ResetColor();
         }
-        static void Main(string[] args)
+
+        private static void Main()
         {
+            // Set Culture
             CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
 
             Header();
+
+            // Server application.
+            LoginServerApp app = new LoginServerApp();
+
+            ManualResetEvent exitEvent = new ManualResetEvent(false);
+
+            // Ctrl + C handler.
+            Console.CancelKeyPress += (sender, eventArgs) =>
+            {
+                eventArgs.Cancel = true;
+                exitEvent.Set();
+                //app.Close();
+            };
+
+            // Initialize the server.
+            app.Start();
+
+            // Run the server..
+            app.Run();
+
+            exitEvent.WaitOne();
+
+            // Shutdown the server.
+            app.Shutdown();
         }
     }
 }
