@@ -11,6 +11,7 @@ using Core.Event;
 using System.Collections.Generic;
 using System.Text;
 using LoginServer.Network.Event;
+using Serialization;
 
 namespace LoginServer.Session
 {

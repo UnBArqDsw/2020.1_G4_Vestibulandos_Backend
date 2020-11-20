@@ -9,12 +9,31 @@ using LoginServer.Application;
 using LoginServer.Database;
 using LoginServer.FSM;
 using LoginServer.Session;
+using Serialization.Data;
 using ServerFramework;
 
 namespace LoginServer
 {
-    public class LoginManager : Singleton<LoginManager>
+    public class LoginManager /*: Singleton<LoginManager>*/
     {
+        private static volatile LoginManager s_instance;
+        private static readonly object s_syncRoot = new Object();
+
+        public static LoginManager Instance
+        {
+            get
+            {
+                if (s_instance == null)
+                {
+                    lock (s_syncRoot)
+                    {
+                        s_instance = new LoginManager();
+                    }
+                }
+                return s_instance;
+            }
+        }
+
         private bool m_bReleased = false;
 
         public bool Init()

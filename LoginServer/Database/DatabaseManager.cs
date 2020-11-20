@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using LoginServer.Data;
 using Core.Event;
+using Serialization;
+using Serialization.Data;
+using Common.Constants;
 
 namespace LoginServer.Database
 {
@@ -29,11 +32,7 @@ namespace LoginServer.Database
                 {
                     lock (s_syncRoot)
                     {
-                        if(s_instance == null)
-                        {
-                            ConstructorInfo constructorInfo = typeof(DatabaseManager).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
-                            s_instance = (DatabaseManager)constructorInfo?.Invoke(new object[0]);
-                        }
+                        s_instance = new DatabaseManager();
                     }
                 }
                 return s_instance;

@@ -9,6 +9,7 @@ using LoginServer.Database;
 using LoginServer.Database.Util;
 using Core.Threading;
 using LoginServer.Network;
+using Common.Constants;
 
 namespace LoginServer.Application
 {
@@ -101,8 +102,6 @@ namespace LoginServer.Application
 
                 Security.Security.InitSecurity();
             }
-
-            StartConnectors();
         }
 
         public void DatabaseConfiguration()
@@ -139,16 +138,6 @@ namespace LoginServer.Application
             long uiStartupDuration = Environment.TickCount64 - m_lStartupBegin;
             SFLogUtil.Info(base.GetType(),
                 $"{base.InstanceName} initialized in {(uiStartupDuration / 60000)} minutes {((uiStartupDuration % 60000) / 1000)} seconds.", null, false, false);
-
-            if (ConfigMgr.GetDefaultValue("Console.Enable", true))
-            {
-                Thread commandThread = new Thread(CommandHandler)
-                {
-                    IsBackground = true
-                };
-
-                commandThread.Start();
-            }
 
             long lRealPreviousTime = Environment.TickCount64;
 
@@ -208,7 +197,7 @@ namespace LoginServer.Application
             lock (Global.SyncObject)
             {
                 LoginManager.Instance.OnShutDown();
-                WorkLogManager.Instance.Release();
+                //WorkLogManager.Instance.Release();
 
                 LoginManager.Instance.Release();
                 Global.Instance.Release();
@@ -216,11 +205,6 @@ namespace LoginServer.Application
             }
 
             base.OnShutDown();
-        }
-
-        private void StartConnectors()
-        {
-            // Game Connector
         }
 
         private bool InitGlobalTimer()
@@ -259,44 +243,5 @@ namespace LoginServer.Application
 
             SFLogUtil.Info(base.GetType(), $"Cleaning Memory in {(Environment.TickCount - iTickNow)} ms.");
         }
-
-        public void CommandHandler()
-        {
-            ReadLine.HistoryEnabled = true;
-
-            while (!m_bClose)
-            {
-                string cmd = ReadLine.Read();
-                ReadLine.AddHistory(cmd);
-
-                switch (cmd)
-                {
-                    case "gc":
-                        {
-                            GC.Collect();
-                            GC.WaitForPendingFinalizers();
-                            GC.Collect();
-                        }
-                        break;
-                    case "exit":
-                        {
-                            this.Close();
-                            //this.Shutdown();
-                        }
-                        break;
-                    case "cls":
-                        {
-                            Console.Clear();
-                        }
-                        break;
-                    default:
-                        {
-                            SFLogUtil.Warn(base.GetType(), $"Command [{cmd}] not exists.");
-                        }
-                        break;
-                }
-            }
-        }
-
     }
 }
