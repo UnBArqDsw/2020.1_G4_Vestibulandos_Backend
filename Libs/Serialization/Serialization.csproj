@@ -13,12 +13,8 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Include="$(SolutionDir)..\client\Assets\Scripts\Network\Serialization\*.cs" LinkBase="Shared" />
-    <Compile Include="$(SolutionDir)..\client\Assets\Scripts\Network\Serialization\Data\*.cs" LinkBase="Shared" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Compile Remove="C:\BomberProject\server\..\client\Assets\Scripts\Network\Serialization\PacketRU.cs" />
+    <Compile Include="$(SolutionDir)..\2020.1_G4_Vestibulandos_Frontend\Vestibulandos\Assets\Scripts\Network\Serialization\*.cs" LinkBase="Shared" />
+    <Compile Include="$(SolutionDir)..\2020.1_G4_Vestibulandos_Frontend\Vestibulandos\Assets\Scripts\Network\Serialization\Data\*.cs" LinkBase="Shared" />
   </ItemGroup>
   
   <ItemGroup>
