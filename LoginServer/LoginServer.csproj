@@ -6,7 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IdGen" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Libs\Common\Common.csproj" />
     <ProjectReference Include="..\Libs\Core\Core.csproj" />
+    <ProjectReference Include="..\Libs\Logging\Logging.csproj" />
+    <ProjectReference Include="..\Libs\Security\Security.csproj" />
+    <ProjectReference Include="..\Libs\Serialization\Serialization.csproj" />
   </ItemGroup>
 
   <ItemGroup>
